@@ -3,15 +3,15 @@ import React from 'react'
 const footer = () => {
   return (
     <div>
-<footer class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
+<footer class="bg-gradient-to-r from-red-200 via-red-700 to-red-200">
   <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-      <div>
+      <div className='flex justify-center flex-col items-center'>
       <img src="#" class="mr-5 h-6 sm:h-9" alt="logo" />
-        <p class="max-w-xs mt-4 text-sm text-gray-600">
+        <p class="max-w-xs mt-4 text-sm xs:text-center text-gray-900 font-medium">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, accusantium.
         </p>
-        <div class="flex mt-8 space-x-6 text-gray-600">
+        <div class="flex mt-8 space-x-6 justify-center text-gray-200">
           <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
             <span class="sr-only"> Facebook </span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -44,12 +44,12 @@ const footer = () => {
           </a>
         </div>
       </div>
-      <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid grid-cols-1 gap-6 lg:col-span-2 xs:grid-cols-2 lg:grid-cols-4">
         <div>
           <p class="font-medium">
             Company
           </p>
-          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-100">
             <a class="hover:opacity-75" href> About </a>
             <a class="hover:opacity-75" href> Meet the Team </a>
             <a class="hover:opacity-75" href> History </a>
@@ -60,7 +60,7 @@ const footer = () => {
           <p class="font-medium">
             Services
           </p>
-          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-100">
             <a class="hover:opacity-75" href> 1on1 Coaching </a>
             <a class="hover:opacity-75" href> Company Review </a>
             <a class="hover:opacity-75" href> Accounts Review </a>
@@ -72,7 +72,7 @@ const footer = () => {
           <p class="font-medium">
             Helpful Links
           </p>
-          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-100">
             <a class="hover:opacity-75" href> Contact </a>
             <a class="hover:opacity-75" href> FAQs </a>
             <a class="hover:opacity-75" href> Live Chat </a>
@@ -82,7 +82,7 @@ const footer = () => {
           <p class="font-medium">
             Legal
           </p>
-          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-100">
             <a class="hover:opacity-75" href> Privacy Policy </a>
             <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
             <a class="hover:opacity-75" href> Returns Policy </a>
@@ -91,8 +91,8 @@ const footer = () => {
         </div>
       </div>
     </div>
-    <p class="mt-8 text-xs text-gray-800">
-      © 2022 Comany Name
+    <p class="mt-12 text-xs text-center text-gray-900 font-medium">
+      © 2024 BYM Digital Factory
     </p>
   </div>
 </footer>

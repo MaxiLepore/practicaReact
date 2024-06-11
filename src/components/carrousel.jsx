@@ -1,39 +1,35 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Carousel = require('react-responsive-carousel').Carousel;
+import React, { useRef } from 'react';
+import '../styles/carousel.css';
 
-var DemoCarousel = React.createClass({
-    render() {
-        return (
-            <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
-                <div>
-                    <img src='C:\Users\maxi1\OneDrive\Escritorio\pruebasReact\pruebas_react1\src\images\imagen.jpg' />
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src="assets/2.jpeg" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src="assets/3.jpeg" />
-                    <p className="legend">Legend 3</p>
-                </div>
-                <div>
-                    <img src="assets/4.jpeg" />
-                    <p className="legend">Legend 4</p>
-                </div>
-                <div>
-                    <img src="assets/5.jpeg" />
-                    <p className="legend">Legend 5</p>
-                </div>
-                <div>
-                    <img src="assets/6.jpeg" />
-                    <p className="legend">Legend 6</p>
-                </div>
-            </Carousel>
-        );
-    }
-});
-ReactDOM.render(<DemoCarousel />, document.querySelector('.demo-carousel'));
+const Carrousel = () => {
+  const carrouselRef = useRef(null);
+  const productos = ['Producto 1', 'Producto 2', 'Producto 3', 'Producto 4', 'Producto 5'];
 
-export DemoCarousel
+  const scroll = (direction) => {
+    const scrollAmount = 200;
+    const scrollIncrement = direction === 'left' ? -scrollAmount : scrollAmount;
+    const currentPosition = carrouselRef.current.scrollLeft;
+    const newPosition = currentPosition + scrollIncrement;
+
+    carrouselRef.current.scrollTo({
+      left: newPosition,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <div className="carrousel-container">
+      <button className="arrow left" onClick={() => scroll('left')}>&lt;</button>
+      <div className="carrousel" ref={carrouselRef}>
+        {productos.map((product, index) => (
+          <div key={index} className="carrousel-item">
+            {product}
+          </div>
+        ))}
+      </div>
+      <button className="arrow right" onClick={() => scroll('right')}>&gt;</button>
+    </div>
+  );
+};
+
+export default Carrousel;
