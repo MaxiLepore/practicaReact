@@ -1,21 +1,20 @@
-import React from "react";
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Router } from 'react-router-dom';
-import { Auth0ProviderWithNavigate } from "./auth0-provider-with-navigate";
+import React from 'react';
+import './styles/index.css'; // Asegúrate de importar los estilos de Tailwind aquí
+import Header from './components/header'
+import Footer from './components/footer'
 import Carrousel from './components/carrousel'
-import Panel from './components/panel';
-import Footer from './components/footer';
-import Header from './components/header';
+import Panel from './components/panel'
+import ReactDOM from "react-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Auth0ProviderWithNavigate>
-        <Router>
-          <div className="flex flex-col justify-start items-start w-full bg-purple-900 min-h-screen overflow-hidden">
+    <Auth0Provider
+      domain="dev-2s057x7xpatff0ob.us.auth0.com"
+      clientId="8kaN1MC2Tdw9EJyU7Zoa46JUO9NNg56I"
+      redirectUri="http://localhost:4040/callback"
+    >
+      <div className="flex flex-col justify-start items-start w-full bg-purple-900 min-h-screen overflow-hidden">
                 <div className="flex justify-center w-full h-20 m-0.5 bg-blue-200 flex-shrink-0" >
                   <Header></Header>
                 </div>
@@ -28,9 +27,8 @@ root.render(
                 <div className="w-full h-41 m-0.5 bg-blue-200 flex-shrink-0">
                     <Footer />
                 </div>
-          </div>
-        </Router>
-      </Auth0ProviderWithNavigate>
-    </BrowserRouter>
-  </React.StrictMode>
+          </div>  
+    </Auth0Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
