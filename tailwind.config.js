@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Chocolate: ['Chocolate Classical Sans']
+        chocolate: ['Chocolate Classical Sans']
       },
       screens: {
         'xs': '370px',
